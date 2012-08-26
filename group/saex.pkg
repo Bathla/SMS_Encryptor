@@ -1,0 +1,22 @@
+;
+; Install file for SAEX
+;
+
+; Languages - 
+&EN
+
+; Installation header
+; Application UID
+#{"SendSecure"},(0x101F402D),1,0,0
+(0x101F6F88), 0, 0, 0, {"Series60ProductID"}
+
+; Three files to install for SAEX
+"\symbian\6.1\series60\epoc32\release\thumb\urel\SendSecure.app"-"!:\system\apps\saex\saex.app"
+"\symbian\6.1\series60\epoc32\release\thumb\urel\saex.rsc"-"!:\system\apps\saex\saex.rsc"
+; "saex.aif" - "!:\system\apps\saex\saex.aif"
+
+; Required files
+; None
+
+; Component .sis files
+; None

@@ -1,0 +1,32 @@
+/*
+
+        SAEX.MMP - make file for SAEX_Series60 application
+        
+
+*/
+
+TARGET          SendSecure.APP
+TARGETTYPE      APP
+targetpath      \SYSTEM\APPS\SAEX
+
+UID             0X100039CE 0x101F402D
+
+SOURCEPATH      ..\src
+SOURCE          saex.cpp
+RESOURCE        saex.rss
+
+USERINCLUDE     ..\inc
+SYSTEMINCLUDE   \epoc32\include
+
+LIBRARY         euser.lib       // for CBase, CSession, CActiveScheduler, ...
+LIBRARY         avkon.lib       // for CAknView, CAknViewAppUi
+LIBRARY		    bafl.lib        // for CBaActiveScheduler
+LIBRARY         apparc.lib      // for CApaDocument
+LIBRARY         cone.lib        // for CCoeControl
+LIBRARY         eikcore.lib     // for CEikApplication, CEikDocument, CEikAppUi
+LIBRARY         send.lib	    // for CSendAs
+LIBRARY         sendui.lib      // for CSendAppUi
+LIBRARY         etext.lib       // for CParaFormatLayer, CCharFormatLayer, CRichText
+LIBRARY			msgs.lib		//SMS
+LIBRARY			charconv.lib	//unicode to UTF-8
+LIBRARY			imut.lib

@@ -1,0 +1,78 @@
+/*
+
+        SAEX.CPP - resource file for SAEX application
+        
+
+*/
+
+NAME SAEX
+
+
+#include <eikon.rh>
+#include <avkon.rh>
+#include <eikon.rsg>
+#include <avkon.rsg>
+#include "saex.hrh"
+
+
+RESOURCE RSS_SIGNATURE {}
+
+
+RESOURCE TBUF {buf="";}
+
+
+RESOURCE EIK_APP_INFO
+    {
+    menubar=r_saex_menubar;
+    status_pane=R_AVKON_STATUS_PANE_LAYOUT_USUAL;
+    cba=R_AVKON_SOFTKEYS_OPTIONS_EXIT;              // CBA buttons are "Options" and "Exit"
+    }
+
+
+RESOURCE MENU_BAR r_saex_menubar
+    {
+    titles =
+        {
+        MENU_TITLE { menu_pane = r_saex_options_menu; txt = "Options";}
+        };
+    }
+
+
+RESOURCE MENU_PANE r_saex_options_menu
+    {
+    items =
+        {
+        MENU_ITEM { command = ESAEXCmdCreate; txt = "Decrypt Drafts"; },
+        MENU_ITEM { command = ESAEXCmdSendUi; txt = "Decrypt Inbox"; },
+		MENU_ITEM { command = ESAEXCmdEncryptDrafts; txt= "Encrypt Drafts" ;},
+        MENU_ITEM { command = EClose; txt = "Close"; }
+        };
+    }
+
+
+RESOURCE DIALOG r_saex_tel_number_dialog
+    {
+    flags = EGeneralQueryFlags;
+    buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+    items=
+        {
+        DLG_LINE
+            {
+            type = EAknCtQuery;
+            id = EGeneralQuery;
+            control= AVKON_DATA_QUERY 
+                { 
+                layout = EPhoneLayout;
+                label = "Recipient";
+				control = EDWIN
+                    { 
+                    flags= EEikEdwinNoHorizScrolling | EEikEdwinResizable; 
+                    maxlength = 100; 
+                    width = 5; 
+                    lines = 1; 
+                    }; 
+                };
+            }
+        };
+
+    }

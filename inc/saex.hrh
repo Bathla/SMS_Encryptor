@@ -1,0 +1,22 @@
+/*
+
+        SAEX.HRH - resource header file for SAEX application
+        
+
+*/
+
+#ifndef __SAEX_HRH__
+#define __SAEX_HRH__
+
+
+enum 
+    {
+    ESAEXCmdCreate=100,
+	EClose,
+	ESAEXCmdSendUi,
+	ESAEXCmdEncryptDrafts
+    };
+
+
+#endif  //__SAEX_HRH__
+
